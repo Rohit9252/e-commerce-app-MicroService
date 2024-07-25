@@ -3,8 +3,9 @@ services:
     container_name: ms_psg_sql
     image: postgres
     environment:
-      POSTGRES_USER: postgres
+      POSTGRES_USER: root
       POSTGRES_PASSWORD: root
+      POSTGRES_DB: test_db
       PGDATA: var/lib/postgresql/data
     volumes:
       - postgres:/data/postgres
@@ -53,6 +54,8 @@ services:
     environment:
       - ME_CONFIG_MONGODB_ADMINUSERNAME=root
       - ME_CONFIG_MONGODB_ADMINPASSWORD=root
+      - ME_CONFIG_BASICAUTH_USERNAME=dev
+      - ME_CONFIG_BASICAUTH_PASSWORD=dev
       - ME_CONFIG_MONGODB_SERVER=mongodb
 
   mail-dev:

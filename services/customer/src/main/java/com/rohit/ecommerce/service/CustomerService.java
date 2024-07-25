@@ -1,7 +1,7 @@
 package com.rohit.ecommerce.service;
 
 
-import com.ctc.wstx.util.StringUtil;
+
 import com.rohit.ecommerce.customer.Customer;
 import com.rohit.ecommerce.customer.CustomerControllerRequest;
 import com.rohit.ecommerce.customer.CustomerMapper;
@@ -75,9 +75,6 @@ public class CustomerService {
                 .stream()
                 .map(customerMapper::FromCustomer)
                 .collect(Collectors.toList());
-
-
-
     }
 
     public CustomerResponse findCustomerById(String id) {
@@ -106,10 +103,6 @@ public class CustomerService {
                 .orElseThrow(()-> new CustomerNotFoundException(
                         format("Cannot Find Customer:: No Customer found with the provided ID:: %s", customerId)
                 ));
-
-
         customerRepository.deleteById(customerId);
-
-
     }
 }
