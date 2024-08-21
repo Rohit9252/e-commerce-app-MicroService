@@ -46,7 +46,7 @@ public class ProductService {
                 .collect(Collectors.toList());
     }
 
-    //@Transactional(rollbackOn = ProductPurchaseException.class)
+    @Transactional(rollbackOn = ProductPurchaseException.class)
     public List<ProductPurchaseResponse> purchaseProducts(
             List<ProductPurchaseRequest> request
     ) {

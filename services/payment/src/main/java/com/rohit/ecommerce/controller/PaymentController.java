@@ -1,6 +1,7 @@
 package com.rohit.ecommerce.controller;
 
 
+import com.rohit.ecommerce.request.PaymentRequest;
 import com.rohit.ecommerce.service.PaymentService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +22,7 @@ public class PaymentController {
 
     @PostMapping
     public ResponseEntity<Integer> createPaymnent(
-            @RequestBody @Valid PaymentRequest paymentRequest) {
+            @RequestBody @Valid PaymentRequest paymentRequest
     ){
         return ResponseEntity.ok(paymentService.createPayment(paymentRequest));
 
